@@ -8,7 +8,7 @@ In short, this project aims to create an application that can streamline the pro
 
 This project is mainly targeted for 3 users (Administrators, Employees, and Tenants), and it has 10 backlog items (to be revised). Each member are restricted to only performing actions according to their authority level.
 
-===============================================================================================================
+===========================================================================
 
 Contributors and roles:
 1. Izz Danish - Project Lead, Lead Developer
