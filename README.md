@@ -1,4 +1,4 @@
-# IzzCondo-(SWE20001 Managing Software Projects Gotogro Project) 
+# IzzCondo-(SWE20001 Managing Software Projects) 
 
 This project is the effort of INTI International College Subang Jaya students (Group 12 - C1 AUG2023) in conjunction with the SWE20001 Managing Software Projects. Group members are Hiew Wei Lik, Izz Danish, Kong Cheng Fung, Leong Chor Yin, and Vickramraaj Chan.
 
