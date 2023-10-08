@@ -11,6 +11,7 @@
     left: -250px; /* Hide the sidebar by default */
     background-color: #333;
     padding-top: 20px;
+    padding-left: 20px;
     color: #fff;
     transition: left 0.3s;
 }
