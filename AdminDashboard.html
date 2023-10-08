@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Home Page</title>
+    
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Add custom CSS if needed -->
+    <!-- <link rel="stylesheet" href="custom.css"> -->
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <h2>Admin Dashboard</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Users</a>
+    <a href="#">Products</a>
+    <a href="#">Settings</a>
+</div>
+
+<!-- Content -->
+<div class="content">
+    <h1>Welcome to the Admin Dashboard</h1>
+    <p>Update/Edit Tenant Information</p>
+</div>
+
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>Name</th>
+        <th>Unit</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="d-flex align-items-center">
+            <img
+                src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                alt=""
+                style="width: 45px; height: 45px"
+                class="rounded-circle"
+                />
+            <div class="ms-3">
+              <p class="fw-bold mb-1">John Doe</p>
+              <p class="text-muted mb-0">john.doe@gmail.com</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <p class="fw-normal mb-1">Block A</p>
+          <p class="text-muted mb-0">A101</p>
+        </td>
+        <td>
+          <span class="badge badge-success rounded-pill d-inline">Active</span>
+        </td>
+        <td>
+          <button type="button" class="btn btn-link btn-sm btn-rounded">
+            Edit
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="d-flex align-items-center">
+            <img
+                src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                class="rounded-circle"
+                alt=""
+                style="width: 45px; height: 45px"
+                />
+            <div class="ms-3">
+              <p class="fw-bold mb-1">Alex Ray</p>
+              <p class="text-muted mb-0">alex.ray@gmail.com</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <p class="fw-normal mb-1">Block B</p>
+          <p class="text-muted mb-0">B102</p>
+        </td>
+        <td>
+          <span class="badge badge-primary rounded-pill d-inline"
+                >Onboarding</span
+            >
+        </td>
+        <td>
+          <button
+                  type="button"
+                  class="btn btn-link btn-rounded btn-sm fw-bold"
+                  data-mdb-ripple-color="dark"
+                  >
+            Edit
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="d-flex align-items-center">
+            <img
+                src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                class="rounded-circle"
+                alt=""
+                style="width: 45px; height: 45px"
+                />
+            <div class="ms-3">
+              <p class="fw-bold mb-1">Kate Hunington</p>
+              <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <p class="fw-normal mb-1">Block B</p>
+          <p class="text-muted mb-0">B103</p>
+        </td>
+        <td>
+          <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
+        </td>
+        <td>
+          <button
+                  type="button"
+                  class="btn btn-link btn-rounded btn-sm fw-bold"
+                  data-mdb-ripple-color="dark"
+                  >
+            Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Your Website</small>
+    </div>
+</footer>
+<!-- Add Bootstrap JavaScript and jQuery scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(document).mousemove(function (e) {
+            // Define the left boundary for showing the sidebar (e.g., 50px from the left edge)
+            const leftBoundary = 50;
+
+            // Check if the mouse cursor is within the defined left boundary
+            if (e.pageX <= leftBoundary) {
+                // Show the sidebar
+                $("#sidebar").addClass("active");
+                $(".content").addClass("active");
+            } else {
+                // Hide the sidebar
+                $("#sidebar").removeClass("active");
+                $(".content").removeClass("active");
+            }
+        });
+    });
+</script>
+</body>
+</html>
