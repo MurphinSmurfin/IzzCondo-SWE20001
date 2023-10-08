@@ -10,10 +10,13 @@ while(true){
 } 
 
 $_SESSION["username"] = $_POST["username"];
-$email = $_SESSION["username"];
+$username = $_SESSION["username"];
+
+$_SESSION["password"] = $_POST["password"];
+$password = $_SESSION["password"];
 
 $con = mysqli_connect("localhost","root","","izzcondo");
-$query = "SELECT `userRole` FROM `users` WHERE `userName` = '$email'"; 
+$query = "SELECT `userRole` FROM `users` WHERE `userName` = '$username' AND `userpass` = '$password'"; 
 $result = $con->query($query);
 
 // Check if the query executed successfully
