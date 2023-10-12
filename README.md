@@ -11,8 +11,8 @@ This project is mainly targeted for 3 users (Administrators, Employees, and Tena
 ===========================================================================
 
 Contributors and roles:
-1. Izz Danish - Project Lead, Lead Developer
+1. Izz Danish bin Adam - Project Lead, Lead Developer
 2. Kong Cheng Fung - Lead UI Designer, Assistant Developer
 3. Leong Chor Yin - Assistant UI Designer, Lead Developer
 4. Hiew Wei Lik - Backend Developer, Database Manager
-5. Vickramraaj Chan - Assistant Backend Developer, Assistant Database Manager, Documentator
+5. Vickramraaj Chan Gurusamy - Assistant Backend Developer, Assistant Database Manager, Documentator
