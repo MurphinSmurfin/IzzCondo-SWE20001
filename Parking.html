@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+</head>
+<body style="background-color: #eee;">
+
+<header>
+    <div class="container-fluid" style="box-shadow: 0 4px 2px -2px rgb(158, 158, 158); background-color: white;">
+        <div class="topnav">
+            <div class="logo">
+                <img src="Image/iZZpROPERTY.png" style="height: 80px; width: 80px; margin: 12px;">
+                <h3 class="nav-logo">IZZ CONDOMINIUM</h3>
+            </div>
+            <div class="nav-center">
+              <ul>
+                <li><a href="file:///C:/Users/kong/OneDrive/Documents/SWE/TenantHome.html"><b>HOME</b></a></li>
+                <li><a href="file:///C:/Users/kong/OneDrive/Documents/SWE/Booking.html"><b>BOOKING</b></a></li>
+                <li><a href="file:///C:/Users/kong/OneDrive/Documents/SWE/Maintenance.html" ><b>MAINTENANCE</b></a></li>
+                <li><a class="active"><b>PARKING</b></a></li>
+                <li><a href="file:///C:/Users/kong/OneDrive/Documents/SWE/Rental.html"><b>RENTAL</b></a></li>
+            </ul>
+            </div>
+            <div class="profile-container">
+              <button class="avatar" onclick="myFunction()">A</button>
+              <div class="dropdown-content" id="myDropdown" >
+                <a href="#Inbox">Inbox</a>
+                <a href="#logout">Logout</a>
+              </div>
+            </div>
+        </div>
+      </div>
+<br>
+<div class="container-fluid" >
+    <div class="bg-img">
+        <div class="overlay"></div>
+        <h1 class="h1-center">Parking</h1>
+        <p class="p1-center"><a href="" style="color: orange;">Home</a> / Parking</p> 
+    </div>
+</div>
+
+<div class="container-fluid">
+  <div class="add-row">
+    <button class="addButt" onclick="openForm()"><b>+</b> Add</button>
+  </div>
+</div>
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Unit</b></label>
+    <input type="text" placeholder="Enter Unit" name="Unit" required>
+
+    <label for="parking"><b>Parking Slot</b></label><br>
+    <select class="parkingOpt">
+      <option>Sample</option>
+      <option>Sample</option>
+      <option>Sample</option>
+      <option>Sample</option>
+      <option>Sample</option>
+  </select>
+    <br>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+  <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Izz Condominium</small>
+    </div>
+</footer>
+  
+</body>
+</html>
