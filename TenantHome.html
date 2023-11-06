@@ -2,36 +2,43 @@
 <html lang="en">
 <head>
   <title>Bootstrap 5 Website Example</title>
+  <link rel="icon"  href="Image/IzzProperty.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Izz Condominium</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="Booking.html">Booking</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Maintenance</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Rental/Parking</a>
-            </li>
-        </ul>
+  <header>
+    <div class="container-fluid" style="box-shadow: 0 4px 2px -2px rgb(158, 158, 158); background-color: white;">
+      <div class="topnav">
+          <div class="logo">
+              <img src="Image/IzzProperty.png" style="height: 80px; width: 80px; margin: 12px;">
+              <h3 class="nav-logo">IZZ CONDOMINIUM</h3>
+          </div>
+          <div class="nav-center">
+            <ul>
+              <li><a class="active"><b>HOME</b></a></li>
+              <li><a href="Booking.php"><b>BOOKING</b></a></li>
+              <li><a href="Maintenance.html"><b>MAINTENANCE</b></a></li>
+              <li><a href="Parking.html"><b>PARKING</b></a></li>
+              <li><a href="Rental.html"><b>RENTAL</b></a></li>
+          </ul>
+          </div>
+          <div class="profile-container">
+            <button class="avatar" onclick="myFunction()">A</button>
+            <div class="dropdown-content" id="myDropdown" >
+              <a href="#Inbox">Inbox</a>
+              <a href="#logout">Logout</a>
+            </div>
+          </div>
+      </div>
     </div>
-</nav>
-
+  </header> 
+  <br>
+  </header> 
 <!-- Hero Section -->
 <div class="container-fluid">
     <div class="jumbotron">
