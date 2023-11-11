@@ -8,7 +8,9 @@
     <title>Amenity Booking</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
   </head>
+
   <body>
   <header>
     <div class="container-fluid" style="box-shadow: 0 4px 2px -2px rgb(158, 158, 158); background-color: white;">
@@ -19,18 +21,18 @@
           </div>
           <div class="nav-center">
             <ul>
-              <li><a href="TenantHome.html"><b>HOME</b></a></li>
+              <li><a href="TenantHome.php"><b>HOME</b></a></li>
               <li><a class="Active"><b>BOOKING</b></a></li>
-              <li><a href="Maintenance.html"><b>MAINTENANCE</b></a></li>
-              <li><a href="Parking.html"><b>PARKING</b></a></li>
-              <li><a href="Rental.html"><b>RENTAL</b></a></li>
+              <li><a href="Maintenance.php"><b>MAINTENANCE</b></a></li>
+              <li><a href="Parking.php"><b>PARKING</b></a></li>
+              <li><a href="Payment.php"><b>PAYMENT</b></a></li>
           </ul>
           </div>
           <div class="profile-container">
             <button class="avatar" onclick="myFunction()">A</button>
             <div class="dropdown-content" id="myDropdown" >
-              <a href="#Inbox">Inbox</a>
-              <a href="#logout">Logout</a>
+            <a id="myBtn">Inbox</a>
+              <a href="Login.php">Logout</a>
             </div>
           </div>
       </div>
@@ -41,23 +43,83 @@
 
     <main role="main">
 
-      <section class="jumbotron text-center">
-        <div class="container">
-          <?php
-          $where = $_SERVER['HTTP_REFERER'];
-            if ($_SERVER['HTTP_REFERER'] == "http://localhost/IzzCondo-SWE20001-main/BookingForm.php"){
-              echo "<h1 class='jumbotron-heading'>Booking Request Success</h1>";
-            } else {
-              echo "<h1 class='jumbotron-heading'>Amenity Booking</h1>";
-            }
-          ?>
-          <p class="lead text-muted">Discover our exclusive amenities available for booking. From fitness centers to spa retreats, find your perfect escape. Dive into a world of convenience and relaxation tailored just for you. Start your journey today.</p>
-          <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-          </p>
-        </div>
-      </section>
+      <div class="container-fluid" >
+      <div class="bg-img">
+          <div class="overlay"></div>
+          <h1 class="h1-center">Booking Request</h1>
+          <p class="p1-center"><a href="TenantHome.php" style="color: orange;">Home</a> / Booking</p> 
+      </div>
+    </div>
+
+    <!-- The Modal -->
+<div id="myModal" class="modal" style="display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 20%; /* Location of the box */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */">
+
+    <!-- Modal content -->
+    <div class="modal-content" style="
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;">
+      <div style="
+      display: flex; 
+      justify-content: space-between;">
+        <h3>Inbox</h3>
+        <span class="close" style="color: #aaaaaa;font-size: 28px;font-weight: bold;">&times;</span>
+      </div>
+      <hr>
+      <div class="inbox" style="
+        border: 2px solid #dedede;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+      ">
+      <img src="Image/admin.jpg" alt="Avatar" style="width:100%;float: left;max-width: 60px;width: 100%;margin-right: 20px;border-radius: 50%;">
+        <p>Hello. How are you today?</p>
+        <span class="time-right">11:00</span>
+      </div>
+    </div>
+  
+</div>
+  
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+</script>
 
       <form method="POST" action="BookingForm.php">
       <div class="album py-5 bg-light">
