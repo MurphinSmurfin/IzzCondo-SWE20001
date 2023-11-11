@@ -1,172 +1,172 @@
 /*Admin*/
 .condominium {
-    background-image: url('https://img.freepik.com/premium-vector/condominium-buildings-pool_24640-75580.jpg?w=2000');
-    background-repeat: no-repeat;
-  }
+  background-image: url('https://img.freepik.com/premium-vector/condominium-buildings-pool_24640-75580.jpg?w=2000');
+  background-repeat: no-repeat;
+}
 
-  .sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -250px; /* Hide the sidebar by default */
-    background-color: #333;
-    padding-top: 20px;
-    color: #fff;
-    transition: left 0.3s;
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hide the sidebar by default */
+  background-color: #333;
+  padding-top: 20px;
+  color: #fff;
+  transition: left 0.3s;
 }
 
 .sidebar.active {
-    left: 0; /* Show the sidebar when active */
+  left: 0; /* Show the sidebar when active */
 }
 
 .sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #fff;
-    display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  display: block;
 }
 
 .sidebar a:hover {
-    background-color: #555;
+  background-color: #555;
 }
 
 .content {
-    margin-left: 0;
-    padding: 20px;
-    transition: margin-left 0.3s;
+  margin-left: 0;
+  padding: 20px;
+  transition: margin-left 0.3s;
 }
 
 .header2 {
-    background-color: #fff;
-    padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header {
-    background-image: url('Image/condominium.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  background-image: url('Image/condominium.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 /*Tenant*/
 .bg-img {
-    background-image: url('Image/landscape.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    position: relative; 
-    height: 350px;
-    border-radius: 10px;
+  background-image: url('Image/landscape.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  position: relative; 
+  height: 350px;
+  border-radius: 10px;
 }
 
 .overlay {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .h1-center {
-    position: absolute;
-    text-align: center;
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  text-align: center;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .p1-center {
-    position: absolute;
-    text-align: center;
-    color: white;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  text-align: center;
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .topnav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  
-  li {
-    display: inline;
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-  .topnav .nav-center {
-    transform: translate(-15%, -10%);
-  }
-  
-  li a {
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    color: black;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: large;
-  }
+li {
+  display: inline;
+}
 
-  li a:hover {
-    color: orange;
-    text-decoration: none;
-  }
+.topnav .nav-center {
+  transform: translate(-15%, -10%);
+}
 
-  .active {
-    color: orange;
-  }
+li a {
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: black;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+}
 
-  .profile-container {
-    float: inline-end;
-  }
+li a:hover {
+  color: orange;
+  text-decoration: none;
+}
 
-  .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #333;
-    color: #fff;
-    font-size: 24px;
-    line-height: 25px;
-    text-align: center;
+.active {
+  color: orange;
+}
+
+.profile-container {
+  float: inline-end;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  font-size: 24px;
+  line-height: 25px;
+  text-align: center;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 90px;
-  right: 10px;
-  background-color: #f1f1f1;
-  min-width: 250px;
-  overflow: auto;
-  border-radius: 15px;
-  box-shadow: 16px 16px 16px 16px rgba(0,0,0,0.2);
-  z-index: 1;
+display: none;
+position: absolute;
+top: 90px;
+right: 10px;
+background-color: #f1f1f1;
+min-width: 250px;
+overflow: auto;
+border-radius: 15px;
+box-shadow: 16px 16px 16px 16px rgba(0,0,0,0.2);
+z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
 }
 
 .profile-container a:hover {background-color: #ddd;}
@@ -174,93 +174,97 @@ ul {
 .show {display: block;}
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif
 }
 
 .container {
-  margin: 30px auto;
+margin: 30px auto;
 }
 
 .container .card {
-  width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background: #fff;
-  border-radius: 0px;
+width: 100%;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+background: #fff;
+border-radius: 0px;
 }
 
 
 /*Payment*/
 .payment-body {
-  box-shadow: 16px 16px 16px 16px rgba(0,0,0,0.1);
+box-shadow: 16px 16px 16px 16px rgba(0,0,0,0.1);
 }
 
 .payment-card {
-  background-color: white;
+background-color: white;
 }
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 20%; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 20%; /* Location of the box */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+background-color: #fefefe;
+margin: auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
 }
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
-  font-size: 28px;
-  font-weight: bold;
+color: #aaaaaa;
+font-size: 28px;
+font-weight: bold;
 }
 
 .close:hover, .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+color: #000;
+text-decoration: none;
+cursor: pointer;
 }
 
 .inbox {
-  border: 2px solid #dedede;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
+border: 2px solid #dedede;
+background-color: #f1f1f1;
+border-radius: 5px;
+padding: 10px;
+margin: 10px 0;
 }
 
 .inbox img {
-  float: left;
-  max-width: 60px;
-  width: 100%;
-  margin-right: 20px;
-  border-radius: 50%;
+float: left;
+max-width: 60px;
+width: 100%;
+margin-right: 20px;
+border-radius: 50%;
 }
 
 .inbox::after {
-  content: "";
-  clear: both;
-  display: table;
+content: "";
+clear: both;
+display: table;
 }
 
 .time-right {
-  float: right;
-  color: #aaa;
+float: right;
+color: #aaa;
+}
+
+#sticky-footer {
+  flex-shrink: 0; /* Do not shrink the footer */
 }
