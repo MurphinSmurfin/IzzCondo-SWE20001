@@ -56,7 +56,7 @@ $unitNumber = $row["unitNumber"];
             <div class="profile-container">
               <button class="avatar" onclick="myFunction()">A</button>
               <div class="dropdown-content" id="myDropdown" >
-                <a id="myBtn">Inbox</a>
+                <a href="Inbox.php">Inbox</a>
                 <a href="Login.php">Logout</a>
               </div>
             </div>
