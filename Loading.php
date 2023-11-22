@@ -32,7 +32,7 @@ if ($result) {
         if ($row["userRole"] == "admin"){
             header("Location: AdminDashboard.php");
         } elseif($row["userRole" ] == "user"){
-            header("Location: TenantHome.html");
+            header("Location: TenantHome.php");
         }
     }
 
