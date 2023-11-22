@@ -25,7 +25,7 @@ $userId = $row["userId"];
 if ($result) {
     // Fetch the data from the result object
     
-    $querySent = "INSERT INTO `maintenance`(`userId`, `unitId`, `problem`, `description`) VALUES ('$userId','$userUnit','$problem','$description')"; 
+    $querySent = "INSERT INTO `requests`(`userId`, `requestType`, `problem`, `description`, `unitId`) VALUES ('$userId','Maintenance Request','$problem','$description','$userUnit')"; 
     $resultSent = $con->query($querySent);  
     
     header("Location: TenantHome.php");
