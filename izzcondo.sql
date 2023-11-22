@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2023 at 08:25 AM
+-- Generation Time: Nov 22, 2023 at 08:52 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.4
 
@@ -20,6 +20,124 @@ SET time_zone = "+00:00";
 --
 -- Database: `izzcondo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `announcement`
+--
+
+CREATE TABLE `announcement` (
+  `header` text NOT NULL,
+  `title` text NOT NULL,
+  `date` text NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `announcement`
+--
+
+INSERT INTO `announcement` (`header`, `title`, `date`, `description`) VALUES
+('test', 'test', '22/11/2023', 'testtestsetsetsetset'),
+('2yersdy', '2yrdy', '22/11/2023', '3ysdtsdtst');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `bookingId` int(11) NOT NULL,
+  `bookingVenue` text NOT NULL,
+  `bookingDate` date NOT NULL,
+  `bookingTime` time NOT NULL,
+  `userId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`bookingId`, `bookingVenue`, `bookingDate`, `bookingTime`, `userId`) VALUES
+(1, 'Badminton', '2023-10-06', '14:54:00', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inbox`
+--
+
+CREATE TABLE `inbox` (
+  `inboxId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `subject` text NOT NULL,
+  `content` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `inbox`
+--
+
+INSERT INTO `inbox` (`inboxId`, `userId`, `subject`, `content`) VALUES
+(1, 2, 'Plumbing Issue', 'Okay! Sending plumbers on your way!'),
+(2, 2, 'Pest Issue', 'ew pests, sending hitler\'s friends');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `parking`
+--
+
+CREATE TABLE `parking` (
+  `parkingId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `block` varchar(1) NOT NULL,
+  `floor` int(11) NOT NULL,
+  `unit` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `parking`
+--
+
+INSERT INTO `parking` (`parkingId`, `userId`, `block`, `floor`, `unit`) VALUES
+(1, 1, 'A', 2, 10),
+(2, 2, 'B', 3, 4),
+(3, 3, 'A', 4, 9),
+(4, 4, 'A', 2, 7),
+(5, 5, 'B', 3, 5),
+(6, 6, 'B', 4, 1),
+(7, 7, 'B', 3, 2),
+(8, 2, 'B', 1, 5),
+(9, 2, 'B', 3, 3),
+(10, 2, 'B', 3, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `requests`
+--
+
+CREATE TABLE `requests` (
+  `requestId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `requestType` text NOT NULL,
+  `problem` text NOT NULL,
+  `description` text NOT NULL,
+  `unitId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `requests`
+--
+
+INSERT INTO `requests` (`requestId`, `userId`, `requestType`, `problem`, `description`, `unitId`) VALUES
+(1, 2, 'Maintenance Request', 'Plumbing Issue', 'test', 1),
+(2, 3, 'Maintenance Request', 'Plumbing Issue', '2323', 4),
+(3, 3, 'Parking Request', 'n/a', 'B-2-8', 4),
+(4, 2, 'Maintenance Request', 'Pest Issue', 'blegh pests', 1);
 
 -- --------------------------------------------------------
 
@@ -79,6 +197,32 @@ INSERT INTO `users` (`userId`, `userName`, `userPass`, `userEmail`, `userRole`, 
 --
 
 --
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`bookingId`),
+  ADD UNIQUE KEY `bookingId` (`bookingId`),
+  ADD UNIQUE KEY `bookingId_2` (`bookingId`);
+
+--
+-- Indexes for table `inbox`
+--
+ALTER TABLE `inbox`
+  ADD PRIMARY KEY (`inboxId`);
+
+--
+-- Indexes for table `parking`
+--
+ALTER TABLE `parking`
+  ADD PRIMARY KEY (`parkingId`);
+
+--
+-- Indexes for table `requests`
+--
+ALTER TABLE `requests`
+  ADD PRIMARY KEY (`requestId`);
+
+--
 -- Indexes for table `units`
 --
 ALTER TABLE `units`
@@ -95,10 +239,34 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `inbox`
+--
+ALTER TABLE `inbox`
+  MODIFY `inboxId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `parking`
+--
+ALTER TABLE `parking`
+  MODIFY `parkingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `requests`
+--
+ALTER TABLE `requests`
+  MODIFY `requestId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `userId` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
