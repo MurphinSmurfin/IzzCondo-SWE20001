@@ -10,21 +10,23 @@ while (true) {
 }
 
 $username = $_SESSION["username"];
+$password = $_SESSION["password"];
 $block = $_POST["block"];
 $floor = $_POST["floor"];
 
 $con = mysqli_connect("localhost", "root", "", "izzcondo");
-$query = "SELECT `userId` FROM `users` WHERE `userName` = '$username'";
+$query = "SELECT * FROM `users` WHERE `userName` = '$username' AND `userPass` = '$password'";
 $result = $con->query($query);
 $row = $result->fetch_assoc();
 $userId = $row["userId"];
+$userUnit = $row["unitId"];
 
 $minValue = 1; // Minimum value in the sequence
 $maxValue = 20; // Maximum value in the sequence
 
 for ($i = $minValue; $i <= $maxValue; $i++) {
     if (!numberExists($con, $i)) {
-        InsertNumberIntoDatabase($con, $userId, $block, $floor, $i);
+        InsertNumberIntoDatabase($con, $userId, $block, $floor, $i, $userUnit);
         header("Location: Parking.php");
         break; // Break after inserting the first available number
     }
@@ -39,8 +41,8 @@ function numberExists($con, $number)
     return $row['count'] > 0;
 }
 
-function InsertNumberIntoDatabase($con, $userId, $block, $floor, $number)
+function InsertNumberIntoDatabase($con, $userId, $block, $floor, $number, $userUnit)
 {
-    $con->query("INSERT INTO `parking`(`userId`, `block`, `floor`, `unit`) VALUES ('$userId','$block','$floor','$number')");
+    $con->query("INSERT INTO `requests`(`userId`, `requestType`, `problem`, `description`, `unitId`) VALUES ('$userId','Parking Request','n/a','$block-$floor-$number','$userUnit')");
 }
 ?>
