@@ -43,6 +43,6 @@ function numberExists($con, $number)
 
 function InsertNumberIntoDatabase($con, $userId, $block, $floor, $number, $userUnit)
 {
-    $con->query("INSERT INTO `requests`(`userId`, `requestType`, `problem`, `description`, `unitId`) VALUES ('$userId','Parking Request','n/a','$block-$floor-$number','$userUnit')");
+    $con->query("INSERT INTO `requests`(`userId`, `requestType`, `problem`, `description`, `unitId`) VALUES ('$userId','Parking Request','n/a','Block $block, Floor $floor','$userUnit')");
 }
 ?>
