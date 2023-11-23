@@ -11,10 +11,10 @@ while(true){
 
 
 $con = mysqli_connect("localhost", "root", "", "izzcondo");
-$query = "SELECT * FROM `requests` ORDER BY `requestId` ASC";
+$query = "SELECT * FROM `requests` ORDER BY `requestId` DESC";
 $result = $con->query($query);
 
-    
+$username = $_SESSION["username"];    
 ?>
 <html lang="en">
 
@@ -53,11 +53,12 @@ $result = $con->query($query);
           </ul>
           </div>
           <div class="profile-container">
-            <button class="avatar" onclick="myFunction()">A</button>
-            <div class="dropdown-content" id="myDropdown" >
-              <a href="Login.php">Logout</a>
-            </div>
-          </div>
+                <?php echo"<span class='profile-text'>Hello, $username</span>"?>
+                <button class="avatar" onclick="myFunction()"><?php echo strtoupper(substr($username, 0, 1)); ?></button>
+                <div class="dropdown-content" id="myDropdown" >
+                  <a href="Login.php">Logout</a>
+                </div>
+              </div>
       </div>
     </div>
   </header> 
