@@ -54,12 +54,13 @@ $unitNumber = $row["unitNumber"];
             </ul>
             </div>
             <div class="profile-container">
-              <button class="avatar" onclick="myFunction()">A</button>
-              <div class="dropdown-content" id="myDropdown" >
-                <a href="Inbox.php">Inbox</a>
-                <a href="Login.php">Logout</a>
-              </div>
+          <?php echo"<span class='profile-text'>Hello, $username</span>"?>
+            <button class="avatar" onclick="myFunction()"><?php echo strtoupper(substr($username, 0, 1)); ?></button>
+            <div class="dropdown-content" id="myDropdown" >
+              <a href="Inbox.php">Inbox</a>
+              <a href="Login.php">Logout</a>
             </div>
+          </div>
         </div>
       </div>
     </header> 
