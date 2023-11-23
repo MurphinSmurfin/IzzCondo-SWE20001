@@ -13,7 +13,7 @@ $username = $_SESSION["username"];
 $password = $_SESSION["password"];
 
 $con = mysqli_connect("localhost", "root", "", "izzcondo");
-$query = "SELECT * FROM `announcement` ORDER BY `date` DESC";
+$query = "SELECT * FROM `announcement` ORDER BY `announcementId` DESC";
 $result = $con->query($query);
 
 ?>
@@ -63,7 +63,8 @@ $result = $con->query($query);
           </ul>
           </div>
           <div class="profile-container">
-            <button class="avatar" onclick="myFunction()">A</button>
+          <?php echo"<span class='profile-text'>Hello, $username</span>"?>
+            <button class="avatar" onclick="myFunction()"><?php echo strtoupper(substr($username, 0, 1)); ?></button>
             <div class="dropdown-content" id="myDropdown" >
               <a href="Inbox.php">Inbox</a>
               <a href="Login.php">Logout</a>
@@ -163,10 +164,12 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */">
               $description = $row["description"];
               
               echo "
-              <div class='col-sm-8'>
-                <h2>$header</h2>
-                <h5>$title, $date</h5>
-                <p>$description</p>
+              <div class='container'>
+                <div class='feed' style='border-radius: 15px; background-color: #fefefe; padding: 20px; border: 1px solid #888;'>
+                  <h3>$header</h3><hr>
+                  <h5>$title, $date</h5><hr>
+                  <p>$description</p>
+                </div>
               </div>
               ";
           }
