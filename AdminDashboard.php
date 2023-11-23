@@ -11,8 +11,10 @@ while(true){
 
 
 $con = mysqli_connect("localhost", "root", "", "izzcondo");
-$query = "SELECT * FROM `announcement` ORDER BY `date` DESC";
+$query = "SELECT * FROM `announcement` ORDER BY `announcementId` DESC";
 $result = $con->query($query);
+
+$username = $_SESSION["username"];
 
 ?>
 <!DOCTYPE html>
@@ -46,7 +48,8 @@ $result = $con->query($query);
                 </ul>
               </div>
               <div class="profile-container">
-                <button class="avatar" onclick="myFunction()">A</button>
+                <?php echo"<span class='profile-text'>Hello, $username</span>"?>
+                <button class="avatar" onclick="myFunction()"><?php echo strtoupper(substr($username, 0, 1)); ?></button>
                 <div class="dropdown-content" id="myDropdown" >
                   <a href="Login.php">Logout</a>
                 </div>
@@ -81,12 +84,21 @@ $result = $con->query($query);
                     $title = $row["title"];
                     $date = $row["date"];
                     $description = $row["description"];
+                    $announcementId = $row["announcementId"];
                     
                     echo "
-                    <div class='col-sm-8'>
-                      <h2>$header</h2>
-                      <h5>$title, $date</h5>
-                      <p>$description</p>
+                      <div class='container'>
+                      <div class='feed' style='border-radius: 15px; background-color: #fefefe; padding: 20px; border: 1px solid #888;'>
+                        <h3>$header</h3><hr>
+                        <h5>$title, $date</h5><hr>
+                        <p>$description</p>
+                        <form method='post' action='AdminAnnouncementDelete.php'>
+                        <input type='hidden' name='announcementId' value='$announcementId'></input>
+                        <div class='d-flex justify-content-end align-items-center'>
+                          <button class='btn btn-primary' style='background-color: red;'>Delete</button>
+                        </div>
+                        </form>
+                      </div>
                     </div>
                     ";
                 }
