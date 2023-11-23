@@ -64,11 +64,12 @@ if ($result && $result->num_rows > 0) {
         </ul>
         </div>
         <div class="profile-container">
-          <button class="avatar" onclick="myFunction()">A</button>
-          <div class="dropdown-content" id="myDropdown" >
+          <?php echo"<span class='profile-text'>Hello, $username</span>"?>
+            <button class="avatar" onclick="myFunction()"><?php echo strtoupper(substr($username, 0, 1)); ?></button>
+            <div class="dropdown-content" id="myDropdown" >
               <a href="Login.php">Logout</a>
+            </div>
           </div>
-        </div>
     </div>
 </div>
 </header> 
@@ -78,7 +79,6 @@ if ($result && $result->num_rows > 0) {
   <div class="bg-img">
       <div class="overlay"></div>
       <h1 class="h1-center">Inbox</h1>
-      <p class="p1-center"><a href="" style="color: orange;">Home</a> / Inbox</p> 
   </div>
 </div>
 
