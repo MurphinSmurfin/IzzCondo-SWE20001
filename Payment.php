@@ -1,3 +1,38 @@
+<?php
+session_start();
+$i = 0;
+while(true){
+    if (!empty($_SESSION['id'][$i])){
+        $i = $i + 1;
+    } else {
+        break;
+    }
+} 
+
+$username = $_SESSION["username"];
+$password = $_SESSION["password"];
+
+$con = mysqli_connect("localhost","root","","izzcondo");
+$query = "SELECT `userId` FROM `users` WHERE `userName` = '$username' AND `userPass` = '$password'"; 
+$result = $con->query($query);
+$row = $result->fetch_assoc();
+$userId = $row["userId"];
+
+
+$query = "SELECT COUNT(`parkingId`) AS parkingCount FROM `parking` WHERE `userId` = '$userId'";
+$result = $con->query($query);
+
+if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $parkingCount = $row["parkingCount"];
+} else {
+    $parkingCount = 0;
+}
+
+$parkingTotal = 15 * $parkingCount;
+$total = 1500 + $parkingTotal;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +61,8 @@
           </ul>
           </div>
           <div class="profile-container">
-            <button class="avatar" onclick="myFunction()">A</button>
+          <?php echo"<span class='profile-text'>Hello, $username</span>"?>
+            <button class="avatar" onclick="myFunction()"><?php echo strtoupper(substr($username, 0, 1)); ?></button>
             <div class="dropdown-content" id="myDropdown" >
               <a href="Inbox.php">Inbox</a>
               <a href="Login.php">Logout</a>
@@ -258,7 +294,9 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */">
   
               <div class="d-flex justify-content-between">
                 <span>Total<i class="fa fa-clock-o"></i></span>
-                <span>1</span>
+                <?php
+                echo "<span>$parkingCount</span>";
+                ?>
               </div>
             </div>
   
@@ -270,13 +308,15 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */">
                 <span>Total : </span>
               </div>
               <div class="d-flex flex-column">
-                <span>RM1500 + RM15</span>
-                <span><b>RM2000</b></span>
+                <span>RM1500 + RM<?php echo"$parkingTotal"?></span>
+                <span><b>RM<?php echo"$total"; ?></b></span>
               </div>
             </div>
   
             <div class="p-3">
-              <button class="btn btn-primary btn-block free-button">Confirm Payment</button> 
+              <form method="post" action="PaymentSuccess.php">
+                <button class="btn btn-primary btn-block free-button">Confirm Payment</button> 
+              </form>
             </div>
           </div>
         </div>
