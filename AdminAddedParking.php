@@ -12,9 +12,10 @@ while (true) {
 $username = $_SESSION["username"];
 $block = $_POST["block"];
 $floor = $_POST["floor"];
+$userParkingId = $_POST["userId"];
 
 $con = mysqli_connect("localhost", "root", "", "izzcondo");
-$query = "SELECT `userId` FROM `users` WHERE `userName` = '$username'";
+$query = "SELECT `userId` FROM `users` WHERE `userId` = '$userParkingId'";
 $result = $con->query($query);
 $row = $result->fetch_assoc();
 $userId = $row["userId"];
