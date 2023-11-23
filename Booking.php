@@ -1,3 +1,18 @@
+<?php
+session_start();
+$i = 0;
+while(true){
+    if (!empty($_SESSION['id'][$i])){
+        $i = $i + 1;
+    } else {
+        break;
+    }
+} 
+
+$username = $_SESSION["username"];
+
+?>
+
 <html lang="en"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +44,8 @@
           </ul>
           </div>
           <div class="profile-container">
-            <button class="avatar" onclick="myFunction()">A</button>
+          <?php echo"<span class='profile-text'>Hello, $username</span>"?>
+            <button class="avatar" onclick="myFunction()"><?php echo strtoupper(substr($username, 0, 1)); ?></button>
             <div class="dropdown-content" id="myDropdown" >
               <a href="Inbox.php">Inbox</a>
               <a href="Login.php">Logout</a>
